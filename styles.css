@@ -9,7 +9,7 @@ html {
 
 
 .container {
-    height: 100vh;
+    /* height: 100vh; */
     background-color: #ffffff;
     display: grid;
     grid-template-columns: clamp(200px, 25%, 400px) 5fr;
@@ -47,7 +47,7 @@ html {
     align-items: center;
     gap: 10px;
     grid-column: 1 / 8;
-    padding:30px 50px;
+    padding: 30px 50px;
 }
 
 .search-bar input {
@@ -67,7 +67,7 @@ html {
     justify-content: center;
     align-items: center;
     gap: 35px;
-    padding-right:60px;
+    padding-right: 60px;
     grid-column: 8 / 11;
 }
 
@@ -85,11 +85,11 @@ html {
     grid-column: 1 / 7;
     font-size: 2rem;
     font-weight: 900;
-    padding:20px 50px;
+    padding: 20px 50px;
 }
 
-.welcome-header span{
-    font-size:1rem;
+.welcome-header span {
+    font-size: 1rem;
 }
 
 .right-buttons {
@@ -109,7 +109,7 @@ html {
     font-weight: 700;
     cursor: pointer;
     font-size: 1.2rem;
-    min-width:140px;
+    min-width: 140px;
     text-align: center;
 }
 
@@ -121,8 +121,42 @@ html {
 .article {
     background-color: #e2e8f0;
     /* border: solid red 1px; */
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    grid-template-rows: 1fr 1fr;
 }
 
+.project-menu {
+    grid-row: 1 / 3;
+    grid-column: 1 / 2;
+    border: solid red 1px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+.project-container {
+    border: solid yellow 5px;
+    background-color: white;
+   
+}
+/* sizing is an issue, its not clear what is defining the boxes height */
+
+.announcements {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    border: solid red 1px;
+}
+
+.trending {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    border: solid red 1px;
+}
+
+/* 
+
+*/
 
 #profile-img,
 #main-profile-img {
@@ -133,14 +167,14 @@ html {
 #profile-img {
     width: 60px;
     height: 60px;
-      border: rgb(139, 199, 255) 3px solid;
+    border: rgb(139, 199, 255) 3px solid;
 }
 
 
 #main-profile-img {
     width: 90px;
     height: 90px;
-      border: rgb(139, 199, 255) 4px solid;
+    border: rgb(139, 199, 255) 4px solid;
 }
 
 .main-icons {
