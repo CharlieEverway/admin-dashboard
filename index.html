@@ -14,8 +14,9 @@
 
         <div class="sidebar">
             <div id="sidebar-header">
-                <img>
-                <div class="dashboard-text"><img src="icons/dashboard.svg" class="main-icons">Dashboard</div>
+                <div class="dashboard-text">
+                    <img src="icons/dashboard.svg" class="main-icons">Dashboard
+                </div>
             </div>
             <ul class="dash-menu">
                 <li class="dash-item"><img class="icons" src="icons/home.svg"><span>Home</span></li>
@@ -24,6 +25,7 @@
                 <li class="dash-item"><img class="icons" src="icons/history.svg">History</li>
                 <li class="dash-item"><img class="icons" src="icons/tasks.svg">Tasks</li>
                 <li class="dash-item"><img class="icons" src="icons/communities.svg">Communities</li>
+                <li><a href="dashboard-project.png">Reference Image</a></li>
             </ul>
 
             <ul class="dash-menu">
@@ -36,12 +38,33 @@
 
 
         <div class="nav">
+            <div class="search-bar">
+                <img src="icons/search-icon.svg" class="icons" id="search-icon">
+                <input type="text" placeholder="Search your Dashboard...">
 
-          <img src="icons/cat-profile-pic.jpg" alt="admin profile image" id="profile-img">
-
-            Navbar
+            </div>
+            <div class="right-links">
+                <img src="icons/notification.svg" class="icons" id="notification-icon">
+                <img src="icons/cat-profile-pic.jpg" alt="admin profile image" id="profile-img">
+                <div id="user-name">Charlie the Admin</div>
+            </div>
+            <div class="welcome-header">
+                <img src="icons/cat-profile-pic.jpg" alt="admin profile image" id="main-profile-img">
+                <div class="welcome-text"><span>Hi there,<br></span>
+                    Charlie the Admin (@charlie)
+                </div>
+            </div>
+            <div class="right-buttons">
+                <button>New</button>
+                <button>Upload</button>
+                <button>Share</button>
+            </div>
 
         </div>
+
+        <!-- the navbar needs reworking, at the moment its all a bit strange. top part and bottom part in seperate containers, or make it one single grid -->
+
+
         <div class="article">Your Projects</div>
 
 
@@ -58,3 +81,13 @@
 <!-- Using the other files as reference, setup a basic html layout
  and then a dummy grid. Make sure that dummy grid resizes, etc. well
  Then start filling each part bit by bit with content. -->
+
+<!-- for additional fun, we can add JS that checks the users name, etc.
+  and changes the profile image or name displayed and uses classes etc.
+  to change the name -->
+
+<!-- you need to add the shadowy border between header and projects  -->
+
+<!-- there should also be mroe unifying text. denote basic text
+   styles in the body etc.
+   then use alternative styling options -->
