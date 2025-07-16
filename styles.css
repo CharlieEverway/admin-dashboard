@@ -32,7 +32,6 @@ html {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: auto;
-    background-color: white;
     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.1);
     z-index: 10;
 }
@@ -52,7 +51,7 @@ html {
     border-radius: 999px;
     background-color: #e2e8f0;
     color: #333;
-    width: clamp(50px, 40vw, 820px); 
+    width: clamp(50px, 40vw, 820px);
     height: 30px;
 }
 
@@ -66,7 +65,8 @@ html {
 }
 
 .right-links #user-name {
-    font-size: 1.4rem;
+    font-size: clamp(0.5rem, 1.5vw, 1.5rem);
+    white-space: nowrap;
     font-weight: 700;
 }
 
@@ -76,7 +76,7 @@ html {
     align-items: center;
     gap: 20px;
     grid-column: 1 / 7;
-    font-size: 2rem;
+    font-size: clamp(1rem, 1.5vw, 3rem);
     font-weight: 900;
     padding: 20px 50px;
 }
@@ -89,20 +89,21 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: clamp(0.2rem, 1vw, 2rem);
     grid-column: 7 / 11;
 }
 
 .right-buttons button {
-    padding: 15px 0;
+    padding: clamp(0.3rem, 1vw, 1.0rem);
     border: none;
     border-radius: 999px;
     background-color: #1992d4;
     color: white;
     font-weight: 700;
     cursor: pointer;
-    font-size: 1.2rem;
-    min-width: 140px;
+    font-size: clamp(0.5rem, 1vw, 2rem);
+    width: clamp(50px, 7vw, 200px);
+    flex-shrink: 1;
     text-align: center;
 }
 
@@ -115,7 +116,6 @@ html {
     background-color: #e2e8f0;
     display: grid;
     grid-template-columns: 5fr 2fr;
-    padding: 30px 30px 20px 30px;
     padding: 15px 30px;
 
 }
@@ -155,12 +155,12 @@ html {
 }
 
 .project-title {
-    font-size: 1.3rem;
+    font-size: clamp(0.5rem, 1.3rem, 2rem);
     font-weight: 700;
 }
 
 .project-description {
-    font-size: 1.2rem;
+    font-size: clamp(0.4rem, 1.2rem, 1.5rem);
     color: rgb(100, 100, 100);
     padding-right: 30px;
 }
@@ -188,7 +188,8 @@ html {
     flex-direction: column;
 }
 
-.anny-cards {
+.anny-cards,
+.trending-cards {
     background-color: white;
     border-radius: 20px;
     padding: 30px;
@@ -203,7 +204,7 @@ html {
 
 .anny-card-heading {
     font-size: 1.1rem;
-    font-weight: 990;
+    font-weight: 900;
     padding: 5px;
 }
 
@@ -224,18 +225,6 @@ html {
     background-color: rgb(187, 187, 187);
 }
 
-.trending-cards {
-    background-color: white;
-    border-radius: 20px;
-    padding: 30px;
-    margin-left: 30px;
-    margin-top: 20px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
 .trending-card {
     display: flex;
     align-items: center;
@@ -252,16 +241,9 @@ html {
     padding: 5px;
 }
 
-#profile-img,
-#main-profile-img {
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-
 .profile-img {
     width: 60px;
-    height: 60px;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
     overflow: hidden;
     border: 3px solid rgb(139, 199, 255);
@@ -275,12 +257,15 @@ html {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
-#main-profile-img {
+.profile-img.large {
     width: 90px;
-    height: 90px;
-    border: rgb(139, 199, 255) 4px solid;
+    border: 4px solid rgb(139, 199, 255);
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 .main-icons {
@@ -288,16 +273,11 @@ html {
     height: 50px;
 }
 
-.icons {
-    width: 35px;
-    height: 35px;
-
-}
-
 #search-icon,
-#notification-icon {
+#notification-icon,
+.icons {
     width: 25px;
-    height: 25px
+    height: 25px;
 }
 
 .dashboard-text {
@@ -338,23 +318,3 @@ html {
     font-style: italic;
     cursor: pointer;
 }
-
-
-
-
-/* to do
-
-add clamp sizing so things don't get squished
-
-adjust all font-sizes to use rem and stuff 
-change the sidebar into actual buttons, not just list items
-*/
-
-/* lets also reorganize this css code so its more readable and in order
-i should adjust all things so they are responsive, clamp, 1rem, etc. */
-
-/* your text sizes are allrepeated code attacking multiple
-classes but could be condensced and refined */
-
-
-/* how to fix the headind, take it out! */
