@@ -9,19 +9,16 @@ html {
 
 
 .container {
-    /* height: 100vh; */
     background-color: #ffffff;
     display: grid;
     grid-template-columns: clamp(200px, 25%, 400px) 5fr;
-    grid-template-rows: 1fr 5fr;
+    grid-template-rows: 1fr fit-content;
 
 }
-
 
 .sidebar {
     background-color: #1992d4;
     color: #ffffff;
-    border: solid red 1px;
     grid-row: 1 / 3;
     position: sticky;
     top: 0;
@@ -30,20 +27,14 @@ html {
     overflow: hidden;
 }
 
-/* the sidebar needs to maintain a minimum size using clamp, etc. so dont forget to add */
 .nav {
     background-color: #ffffff;
-    /* border: solid red 1px; */
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: auto;
     background-color: white;
     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.1);
     z-index: 10;
-}
-
-.nav div {
-    /* border: purple 1px solid; */
 }
 
 .search-bar {
@@ -61,10 +52,8 @@ html {
     border-radius: 999px;
     background-color: #e2e8f0;
     color: #333;
-    /* width: clamp(100px, 50%, 500px);  */
-    width: 820px;
+    width: clamp(50px, 40vw, 820px); 
     height: 30px;
-    /* Add clamp to adjust side flexbily */
 }
 
 .right-links {
@@ -85,7 +74,6 @@ html {
     display: flex;
     justify-content: start;
     align-items: center;
-    /* padding: 15px 50px 20px 50px; */
     gap: 20px;
     grid-column: 1 / 7;
     font-size: 2rem;
@@ -125,44 +113,37 @@ html {
 
 .article {
     background-color: #e2e8f0;
-   
-    border: solid red 1px;
     display: grid;
     grid-template-columns: 5fr 2fr;
-    grid-template-rows: 1fr 1fr;
-    padding: 30px;
-   
+    padding: 30px 30px 20px 30px;
+    padding: 15px 30px;
+
 }
 
 .project-menu {
-    grid-row: 1 / 3;
-    grid-column: 1 / 2;
-    border: solid red 1px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: max-content;
-    gap: 30px;
+    grid-template-rows: min-content auto;
+    gap: 20px;
 }
 
 .project-item {
     border-left: solid rgb(255, 174, 0) 10px;
     border-radius: 20px;
     background-color: white;
-    /* width:300px; */
-    height: 280px;
     display: flex;
     flex-direction: column;
-    padding: 50px 30px;
+    padding: 40px 30px 0 30px;
     box-sizing: border-box;
-    gap: 5px;
-
+    min-height: 300px;
+    height: auto;
 }
 
 .project-icons {
     display: flex;
     justify-content: right;
     gap: 30px;
-    padding-top: 30px;
+    padding-top: 50px;
 }
 
 .project-icons .icons:hover {
@@ -171,12 +152,6 @@ html {
     border: #0056b3 solid 1px;
     box-sizing: border-box;
     border-radius: 50%;
-}
-
-.project-title,
-.project-description,
-.project-icons {
-    /* border:solid red 1px; */
 }
 
 .project-title {
@@ -190,28 +165,27 @@ html {
     padding-right: 30px;
 }
 
-.subheading {
-    font-size: 1.5rem;
-    font-weight: 600;
-    border: solid 1px red;
+.project-menu .subheading {
     grid-column: 1 / 3;
-    padding: 10px;
 
 }
 
-/* sizing is an issue, its not clear what is defining the boxes height */
+.subheading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-top: 40px;
+}
+
+.trending .subheading,
+.announcements .subheading {
+    padding-left: 30px;
+}
 
 .announcements {
     grid-row: 1 / 2;
     grid-column: 2 / 3;
-    border: solid red 1px;
     display: flex;
     flex-direction: column;
-}
-
-.announcements .subheading, .trending .subheading {
-    padding-bottom: 40px;
-    padding-left: 30px;
 }
 
 .anny-cards {
@@ -219,6 +193,7 @@ html {
     border-radius: 20px;
     padding: 30px;
     margin-left: 30px;
+    margin-top: 20px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -241,17 +216,41 @@ html {
 .trending {
     grid-row: 2 / 3;
     grid-column: 2 / 3;
-    border: solid red 1px;
 }
+
 
 .line-spacing {
     height: 1px;
     background-color: rgb(187, 187, 187);
 }
 
-/* 
+.trending-cards {
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    margin-left: 30px;
+    margin-top: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
-*/
+.trending-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.trending-profile {
+    font-size: 1.2rem;
+}
+
+.trending-profile span {
+    font-size: 1rem;
+    color: rgb(100, 100, 100);
+    padding: 5px;
+}
 
 #profile-img,
 #main-profile-img {
@@ -259,12 +258,24 @@ html {
     overflow: hidden;
 }
 
-#profile-img {
+
+.profile-img {
     width: 60px;
     height: 60px;
-    border: rgb(139, 199, 255) 3px solid;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgb(139, 199, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
+.profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 #main-profile-img {
     width: 90px;
@@ -292,7 +303,6 @@ html {
 .dashboard-text {
     font-size: clamp(2.2rem, 15%, 4rem);
     font-weight: 900;
-    /* border: red solid 2px; */
     text-align: center;
     display: flex;
     align-items: center;
@@ -310,7 +320,6 @@ html {
 }
 
 .dash-menu li {
-    /* border:solid black 1px;  */
     display: flex;
     align-items: center;
     gap: 20px;
@@ -346,3 +355,6 @@ i should adjust all things so they are responsive, clamp, 1rem, etc. */
 
 /* your text sizes are allrepeated code attacking multiple
 classes but could be condensced and refined */
+
+
+/* how to fix the headind, take it out! */
